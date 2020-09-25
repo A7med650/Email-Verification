@@ -18,11 +18,12 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from app_user.views import signup
+from app_user.views import signup, activate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', signup),
+    path('activate/<uidb64>/<token>',activate, name='activate'),
 ]
 
 urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
