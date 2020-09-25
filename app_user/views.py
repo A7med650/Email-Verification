@@ -67,19 +67,3 @@ def activate(request, uidb64, token):
       return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
   else:
       return HttpResponse('Activation link is invalid!')
-
-  
-  # print(request.get_host())
-  # return render(request, 'app_user/index.html', context)
-  # user = authenticate(username=username, password=password)
-      
-
-
-# from django.contrib.auth.models import User
-# from django.contrib.auth.tokens import default_token_generator
-# from django.core.mail import EmailMessage
-# from django.template.loader import render_to_string
-# from django.utils.encoding import force_bytes
-# from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-# from django.contrib import messages
-# from django.contrib.auth import authenticate, login
