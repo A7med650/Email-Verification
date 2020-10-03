@@ -18,12 +18,15 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from app_user.views import signup, activate
+from app_user.views import signup, activate, forgetPass, CompletePasswordReset
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', signup),
-    path('activate/<uidb64>/<token>',activate, name='activate'),
+    path('activate/<uidb64>/<token>', activate, name='activate'),
+    path('password-reset/', forgetPass, name='forgetPass'),
+    path('reset-password/<uidb64>/<token>',
+         CompletePasswordReset, name='reset-password'),
 ]
 
-urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

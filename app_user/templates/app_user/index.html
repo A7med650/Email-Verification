@@ -9,6 +9,16 @@
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{% static 'style.css' %}" />
   <title>Sign in & Sign up Form</title>
+  <style>
+    a {
+      text-decoration: none;
+      color: #337ab7;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
@@ -26,6 +36,7 @@
             <i class="fas fa-lock"></i>
             <input type="password" name="password" placeholder="Password" />
           </div>
+          <a href="{% url 'forgetPass' %}">Forget Your Password?</a>
           <input type="submit" value="Login" class="btn solid" />
           {% if messages %}
 
